@@ -1,4 +1,4 @@
-# CS/COE 1501 Project 2
+# CS/COE 1501 Project 2 -- LZW Compression
 
 ## Goal:
 To understand the innerworkings and implementation of the LZW compression algorithm, and to gain a better understanding of the performance it offers.
@@ -49,15 +49,7 @@ With these changes in hand, you will then compare the performance of your modifi
 	* Another existing compression application of your choice (e.g., 7zip, WinZIP, gzip, bzip2)
 You should organize your results of these compressions/expansions into a table in a text file named `results.txt` and submit it along with your code.
 
-## Submission Guidelines:
-* **DO NOT SUBMIT** any IDE package files.
-* You must name the primary driver for your program `MyLZW.java`.
-* You must be able to compile your game by running `javac MyLZW.java`.
-* You must be able to run your program as shown in the above example.
-* You must fill out info_sheet.txt.
-* Be sure to remember to push the latest copy of your code back to your GitHub repository before the the assignment is due. At the deadline, the repositories will automatically be copied for grading. Whatever is present in your GitHub repository at that time will be considered your submission for this assignment.
-
-## Additional Notes/Hints:
+## Additional Notes:
 * In the author's code the bits per codeword (W) and number of codewords (L) values are constants. However, in your version you will need them to be variables. Clearly, as the bits per codeword value increases, so does the number of codewords value.
 * The TST the author uses can grow dynamically, so it does not matter how large the dictionary will be. However, for the `expand()` method an array of String is used for the dictionary. Make sure this is large enough to accommodate the maximum possible number of codewords.
 * Carefully trace what your code is doing as you modify it. You only have to write a few lines of code for this program, but it could still require a substantial amount of time to get to work properly. Clearly the trickiest parts occur when the bits per codeword values are increased and when the dictionary is reset. I recommend tracing these portions of code, either on paper or with output statements to make sure your compression and expansion sections are treating them correctly. One idea is the have an extra output file for each of the `compress()` and `expand()` methods to output any trace code. Printing out (codeword, string) pairs in the iterations just before and after a bit change or reset is done can help you a lot to synchronize your code properly.
@@ -65,16 +57,3 @@ You should organize your results of these compressions/expansions into a table i
 * Start on this project early! Not only will the implementation be tricky, but you will need to finish the programming portion of your project with enough time left over to gather results using your code to compress the example files.
 * Note that `LZW.java` (and consequently your `MyLZW.java`) rely on redirecting standard in and standard out to the input and output files (respectively). An overview of I/O redirection can be found [here](http://www.tldp.org/LDP/abs/html/io-redirection.html), and [here](http://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/redirection.mspx?mfr=true). Note that a consequence of this is that any text printed to standard out (i.e., via `System.out.println()`) will be redirected to the output file instead of the terminal. Standard error, however, should still be displayed to the terminal, and hence, you can use `System.err.println()` to output debugging information. This I/O redirection may also complicate running MyLZW from some IDEs. If you are having trouble running MyLZW from your IDE, please try to run your program from the command line.
 * Consider the notes in `LZW.java` (and `TST.java`) concerning the speed of the `substring()` function. In order to run your experiments faster, you may want to edit LZW.java (MyLZW.java) and TST.java to remove all calls to `substring()`. There is no penalty for continuing to use `substring()` for this assignment, but you will experience noticeably slow performance.
-
-## Grading Rubric:
-* Command line arguments are interpreted as specified:  10
-* Variable width keywords (9-16 bits) working properly:  25
-* Reset mode implemented and working properly:  20
-* Monitor mode implemented and working properly:  20
-* Results:
-	* For unmodified `LZW.java`:  4
-	* For variable width codewords (`MyLZW.java`) with Do Nothing mode:  4
-	* For variable width codewords (`MyLZW.java`) with Reset mode:  4
-	* For variable width codewords (`MyLZW.java`) with Monitor mode:  4
-	* For an appropriate popular compression application:  4
-* Assignment info sheet/submission:  5

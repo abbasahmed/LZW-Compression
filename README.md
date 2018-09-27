@@ -1,4 +1,4 @@
-# CS/COE 1501 Project 2 -- LZW Compression
+LZW Compression
 
 ## Goal:
 To understand the innerworkings and implementation of the LZW compression algorithm, and to gain a better understanding of the performance it offers.
